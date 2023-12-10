@@ -8,6 +8,25 @@ from flask_login import LoginManager
 from flask_marshmallow import Marshmallow 
 import secrets
 
+# import hmac
+# str_to_bytes = lambda s: s.encode("utf-8") if isinstance(s, str) else s
+# safe_str_cmp = lambda a, b: hmac.compare_digest(str_to_bytes(a), str_to_bytes(b))
+# import hmac
+
+# def safe_str_cmp(a: str, b: str) -> bool:
+#     """This function compares strings in somewhat constant time. This
+#     requires that the length of at least one string is known in advance.
+
+#     Returns `True` if the two strings are equal, or `False` if they are not.
+#     """
+
+#     if isinstance(a, str):
+#         a = a.encode("utf-8")  # type: ignore
+
+#     if isinstance(b, str):
+#         b = b.encode("utf-8")  # type: ignore
+
+#     return hmac.compare_digest(a, b)
 login_manager = LoginManager()
 ma = Marshmallow()
 db = SQLAlchemy()
